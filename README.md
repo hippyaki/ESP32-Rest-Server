@@ -2,7 +2,7 @@
 
 ### Base URL: https://esp32-rest-server.herokuapp.com
 
-[![Link Validate](https://github.com/hippyaki/API-applications/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/hippyaki/API-applications/actions/workflows/main.yml)
+[![Link Validate](https://github.com/hippyaki/ESP32-Rest-Server/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/hippyaki/ESP32-Rest-Server/actions/workflows/main.yml)
 ------------------------------------------------------------------------------------------------------------------
 
 ### API Endpoints
