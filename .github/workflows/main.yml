@@ -42,11 +42,7 @@ jobs:
           
           files_to_check=$(find $GITHUB_WORKSPACE -type f \
           -not -path '*/\.git/*' -not -path '*/\.github/*' -not -path '*/\node_modules/*'\
-          -name "*.md"
-          paths-ignore:
-            - '**.md'
-          paths-ignore:
-            - '**.json')
+          -not -name "*.md")
           
           
           echo $files_to_check >> $GITHUB_ENV
