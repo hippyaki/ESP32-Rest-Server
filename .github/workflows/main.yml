@@ -41,8 +41,8 @@ jobs:
           echo 'FILES_TO_CHECK<<EOF' >> $GITHUB_ENV
           
           files_to_check=$(find $GITHUB_WORKSPACE -type f \
-          -not -path '*/\.git/*' -not -path '*/\.github/*' \
-          -name "*.md")
+          -not -path '*/\.git/*' -not -path '*/\.github/*' -not -path '*/\node_modules/*'\
+          -name "*.md" "*.json")
           
           echo $files_to_check >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
