@@ -80,7 +80,7 @@ Example - `https://esp32-rest-server.herokuapp.com/device/615fe811a104d86e201dd1
   ]
 }
  ```
- https://healthconnect-server.herokuapp.com/patient/61deb153d07305dfe71fe661
+https://esp32-rest-server.herokuapp.com.herokuapp.com/patient/61deb153d07305dfe71fe661
  
  ```json
 {
