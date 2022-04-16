@@ -6,6 +6,8 @@ const deviceSchema = new mongoose.Schema({
     status: Boolean
     });
 
+deviceSchema.set('toObject', { versionKey: false });
+
 const deviceModel = mongoose.model("Device", deviceSchema);
 
 module.exports = deviceModel;
