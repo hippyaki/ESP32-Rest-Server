@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const deviceSchema = new mongoose.Schema({
     name: String,
-    data:  { type: mongoose.Types.Decimal128, set: function (v) { return Math.round(v) ;}},
+    data:  { type: Number, set: function (v) { return Math.round(v) ;}},
     status: Boolean
     }, { versionKey: false });
 
