@@ -1,6 +1,6 @@
 # ESP32-REST-Server
 
-### Base URL: https://esp32-rest-server.herokuapp.com
+### Base URL: `https://esp32-rest-server.herokuapp.com`
 
 [![Link Validate](https://github.com/hippyaki/ESP32-Rest-Server/actions/workflows/main.yml/badge.svg?branch=master&event=deployment)](https://github.com/hippyaki/ESP32-Rest-Server/actions/workflows/main.yml)
 ------------------------------------------------------------------------------------------------------------------
@@ -11,50 +11,47 @@
 
 `GET` - `/`
 
-Response : 
+Response: <br>
+Example - `https://esp32-rest-server.herokuapp.com/`
+
 ```json
 {
   "device": [
     {
-      "_id": "615fe811a104d86e201dd1be",
+      "_id": "6259c59093e95817659fb32e",
       "name": "Device 1",
-      "data": 65,
-      "status": "success"
+      "data": 55.45,
+      "status": false
     },
     {
-      "_id": "615fe94ba104d86e201dd1c6",
+      "_id": "6259c63293e95817659fb32f",
       "name": "Device 2",
-      "data": 55,
-      "status": "success",
-      "__v": 0
+      "data": 89.36,
+      "status": true
     },
     {
-      "_id": "615fe99aa104d86e201dd1cb",
+      "_id": "6259c64e93e95817659fb330",
       "name": "Device 3",
-      "data": 17,
-      "status": "success",
-      "__v": 0
+      "data": 142.58,
+      "status": false
     },
     {
-      "_id": "615fea618df6a166cc602ef8",
+      "_id": "625a71f6700eb08a3c0538b0",
       "name": "Device 4",
-      "data": 41,
-      "status": "success",
-      "__v": 0
+      "data": 55,
+      "status": true
     },
     {
-      "_id": "615feaaa6ea7bb50c9d7bbc9",
+      "_id": "625a765051245dd4ca5daf79",
       "name": "Device 5",
-      "data": 95,
-      "status": "success",
-      "__v": 0
+      "data": 78,
+      "status": true
     },
     {
-      "_id": "615feb4a2b46b6bd9c6b266a",
-      "name": "Device 7",
-      "data": 266,
-      "status": "success",
-      "__v": 0
+      "_id": "625a79154745a1d0a19365ef",
+      "name": "Device 6",
+      "data": 19,
+      "status": true
     }
   ]
 }
@@ -65,67 +62,35 @@ Response :
 `GET` - ``/device/<id>``
 
 Response: <br>
-Example - `https://esp32-rest-server.herokuapp.com/device/615fe811a104d86e201dd1be/`
+Example - `https://esp32-rest-server.herokuapp.com/device/6259c59093e95817659fb32e`
            
 
  ```json
 {
-  "device": [
-    {
-      "_id": "615fe811a104d86e201dd1be",
-      "name": "Device 1",
-      "data": 65,
-      "status": "success"
-    }
-  ]
-}
- ```
-https://esp32-rest-server.herokuapp.com.herokuapp.com/patient/61deb153d07305dfe71fe661
- 
- ```json
-{
-  "patient": {
-    "_id": "61deb153d07305dfe71fe661",
-    "Name": "Akshayan Sinha",
-    "Age": 21,
-    "Ambulation": false,
-    "BMI": 24.7,
-    "Chills": false,
-    "DBP": 55,
-    "DecreasedMood": false,
-    "FiO2": 78,
-    "GeneralizedFatigue": false,
-    "HeartRate": 65,
-    "HistoryFever": "Last year in 2020 during pandemic. Mild.",
-    "RR": 20,
-    "RecentHospitalStay": "1999-12-31T18:30:00.000Z",
-    "SBP": 41,
-    "SpO2": 95,
-    "Temp": 37,
-    "WeightGain": 5,
-    "WeightLoss": 0,
-    "BGroup": "O+"
+  "device": {
+    "_id": "6259c59093e95817659fb32e",
+    "name": "Device 1",
+    "data": 55.45,
+    "status": false
   }
 }
-```
+ ```
  
  #### 3. Request Device with 'name'
 
 `GET` - ``/device/name/<name>``
 
 Response: <br>
-Example - `https://esp32-rest-server.herokuapp.com/device/name/Device%201`
+Example - `https://esp32-rest-server.herokuapp.com/device/name/Device 1`
 
  ```json
 {
-  "device": [
-    {
-      "_id": "615fe811a104d86e201dd1be",
-      "name": "Device 1",
-      "data": 65,
-      "status": "success"
-    }
-  ]
+  "device": {
+    "_id": "6259c59093e95817659fb32e",
+    "name": "Device 1",
+    "data": 55.45,
+    "status": false
+  }
 }
  ```
 
@@ -138,9 +103,9 @@ Body:
 {
     "newdevice" : 
         {
-        "name" : "Device 9",
-        "data" : "5",
-        "status" : "success"
+        "name" : "Device 6",
+        "data" : 18.93,
+        "status" : true
         }
 }
 ```
@@ -159,7 +124,7 @@ Body:
 ```json
 {
     "deviceData":{
-        "data" : "65"
+        "data" : 87.45
     }
 }
 ```
