@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const deviceSchema = new mongoose.Schema({
     name: String,
-    data:  mongoose.Decimal128,
+    data:  mongoose.Types.Decimal128,
     status: Boolean
     }, { versionKey: false });
 
