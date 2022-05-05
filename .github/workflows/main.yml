@@ -1,4 +1,4 @@
-name: Broken link check
+name: Link Validate
 on: [push]
 
 jobs:
