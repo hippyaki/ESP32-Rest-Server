@@ -6,15 +6,31 @@ jobs:
     runs-on: ubuntu-latest
     name: Check for broken links
     steps:
-    - name: Check for broken links
-      id: link-report
-      uses: celinekurpershoek/link-checker@v1.0.1
-      with:
-        # Required:
-        url: 'https://...'
-        # optional:
-        honorRobotExclusions: false
-        ignorePatterns: 'github,google,mongoose'
-        recursiveLinks: false # Check all URLs on all reachable pages (could take a while)
-    - name: Get the result
-      run: echo "${{steps.link-report.outputs.result}}"
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          
+      - name: Find files with links
+        shell: bash
+        run: |
+          echo 'FILES_TO_CHECK<<EOF' >> $GITHUB_ENV
+          
+          files_to_check=$(find $GITHUB_WORKSPACE -type f \
+          -not -path '*/\.git/*' -not -path '*/\.github/*' \
+          -name "*.md")
+          
+          echo $files_to_check >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+      - name: Validate that links are up
+        uses: simeg/urlsup-action@v1.0.0
+        with:
+          args: ${{ env.FILES_TO_CHECK }} --threads 10 --allow 429 --white-list https://github.com/hippyaki/ESP32-Rest-Server/
