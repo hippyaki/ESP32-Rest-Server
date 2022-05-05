@@ -1,5 +1,11 @@
 name: Link Validate
-on: [push]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+  - cron: "0 0 * * *"
 
 jobs:
   broken_link_checker_job:
